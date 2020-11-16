@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="./resources/style.css">
+  <script type="text/javascript" src="./resources/marked.min.js"></script>
+  <script type="text/javascript" src="./resources/expansionUtil.js"></script>
+  <script type="text/javascript" src="./resources/common.js"></script>
+  <title>PCポータル</title>
+</head>
+
+<body onload="init()">
+  <div id="area_dialog_back" class="area_dialog_back"></div>
+  <div id="area_dialog" class="area_dialog"></div>
+
+  <div class="area_body">
+
+    <h1>ＰＣポータル</h1>
+
+    <div class="area_menu">
+      <span>
+        <a class="a_menu_link" href="#">dummy1</a>|
+        <a class="a_menu_link" href="#">dummy2</a>|
+      </span>
+      <span class="area_menu_icon">
+        <img title="設定" id="menuConfigIcon" src="./resources/images/icon_setting_16.png">
+        &nbsp;
+        <img title="ヘルプ" id="menuHelpIcon" src="./resources/images/icon_help_16.png">
+      </span>
+    </div>
+
+    <div id="custom" class="area_custom">
+      <table>
+        <tr>
+          <td>ダイアログの文字</td>
+          <td>
+            <select id="customDialogFontSize">
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>通知領域の高さ(px)</td>
+          <td><input type="text" id="customNoticeHeight" maxlength="4" style="width:50px;"></td>
+        </tr>
+        <tr>
+          <td>スケジュール領域の高さ(px)</td>
+          <td><input type="text" id="customScheduleHeight" maxlength="4" style="width:50px;"></td>
+        </tr>
+        <tr>
+          <td>タスク領域の高さ(px)</td>
+          <td><input type="text" id="customTaskHeight" maxlength="4" style="width:50px;"></td>
+        </tr>
+        <tr>
+          <td>スケジュールの表示期間(日)</td>
+          <td><input type="text" id="customScheduleDisplayTerm" maxlength="4" style="width:50px;"></td>
+        </tr>
+        <tr>
+          <td>タスクのチェック状態クリア</td>
+          <td><button id="customTaskCheckClear">クリア</button></td>
+        </tr>
+        <tr>
+          <td>タスクのチェック項目を表示</td>
+          <td><input id="customTaskDisplayChecked" type="checkbox"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="area_regular">
+      <span class="item_regular_title">
+        <img id="icon_edit_notice" title="編集" src="./resources/images/icon_edit_16.png">
+        &nbsp;通知&nbsp;
+      </span>
+      <div id="item_notice" class="item_regular"></div>
+    </div>
+
+    <div class="area_regular">
+      <span class="item_regular_title">
+        <img id="icon_edit_schedule" title="編集" src="./resources/images/icon_edit_16.png">
+        &nbsp;スケジュール&nbsp;
+      </span>
+      <div id="item_schedule" class="item_regular"></div>
+    </div>
+
+    <div class="area_regular">
+      <span class="item_regular_title">
+        <img id="icon_edit_task" title="編集" src="./resources/images/icon_edit_16.png">
+        &nbsp;タスク&nbsp;
+      </span>
+      <div id="item_task" class="item_regular"></div>
+    </div>
+
+    <div class="area_file_select">
+      <span class="item_file_select">
+      ファイルを開く
+          <input type="file" id="fileSelect"><br>
+      </span>
+    </div>
+
+    <div class="area_group item_content_group" id="content_group_100"></div>
+    <div class="area_group item_content_group" id="content_group_200"></div>
+    <div class="area_group item_content_group" id="content_group_300"></div>
+    <div class="area_group item_content_group" id="content_group_400"></div>
+    <div class="area_group item_content_group" id="content_group_500"></div>
+    <div class="area_group item_content_group" id="content_group_600"></div>
+    <div class="area_group item_content_group" id="content_group_700"></div>
+    <div class="area_group item_content_group" id="content_group_800"></div>
+    <div class="area_group item_content_group" id="content_group_900"></div>
+
+  </div>
+</body>
+</html>
