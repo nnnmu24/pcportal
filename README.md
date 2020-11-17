@@ -66,7 +66,6 @@ download (https://github.com/nnnmu24/pcportal)
   - コンテンツの定義
   - 編集、エクスプローラコマンド
 
-  
   - コンテンツグループの定義
     - 以下のように、contentObjectGroupMapInitにMapオブジェクトと設定する。  
       キー：固定で、「content_group_100」から「content_group_900」まで。  
@@ -89,11 +88,11 @@ download (https://github.com/nnnmu24/pcportal)
 ```
   - コンテンツの定義
     - 以下のように、contentObjectMapInitにMapオブジェクトと設定する。  
-　　　キー：任意の値。ただしcontent_001からcontent_004は予約している。  
-　　　値・type：コンテンツの種類。plain、html、markdownのいずれか。  
-　　　値・label：画面に表示するコンテンツ名  
-　　　値・pathAbs：path定義が絶対パスの場合はtrue、falseでは「exeが存在するパス/resources/app」を起点とする。  
-　　　値・path：コンテンツのファイルパス。  
+      キー：任意の値。ただしcontent_001からcontent_004は予約している。  
+      値・type：コンテンツの種類。plain、html、markdownのいずれか。  
+      値・label：画面に表示するコンテンツ名  
+      値・pathAbs：path定義が絶対パスの場合はtrue、falseでは「exeが存在するパス/resources/app」を起点とする。  
+      値・path：コンテンツのファイルパス。  
 ```
         exports.contentObjectMapInit = function() {
             let cmap = new Map();
@@ -126,6 +125,7 @@ HTML形式で任意の内容を記述する。
 
 ### 常用情報の「スケジュール」に表示するファイル
 以下のように年月日時分秒=スケジュール内容 という書式で定義する。  
+```
      20190301000000=スポーツクラブへ入会手続き  
      20191218191500=自社の忘年会  
      20200520183000=〇〇さんとイタリアン☆☆で夕食  
@@ -133,30 +133,39 @@ HTML形式で任意の内容を記述する。
      20201028210000=夜間作業  
      20210101083000=△△さんと初詣  
      20220429000000=帰省  
+```
 
 ### 常用情報の「タスク」に表示するファイル
 以下のように5桁の連番=タスク内容 という書式で定義する。  
+```
     0001=薬局へ行く  
     0002=〇〇さんへお礼のメールする  
     0003=コンビニで公共料金の支払い  
     0004=△△サイトのブログチェック  
     0005=イタリアン☆☆を予約  
+```
 
 
 
 # アプリケーションについて
 
 ## アプリケーション情報
-  - OS：Windows(動作確認はWindows10 Home)
-  - resources/app/resources/marked.min.js：MarkEd.js。MDをHTMLへ変換
-    （https://github.com/markedjs/marked）
-  ★疑似ダイアログのデザイン
+  - OS：Windows（動作確認はWindows10 Home）
+  - 使用ツール：electron 1.4.13
+  - 使用言語：HTML,Javascript,css
+
+## 参考、及び使用
+  - Marked.js MDをHTMLへ変換(https://github.com/markedjs/marked）
+  - 疑似ダイアログのコード(https://www.ipentec.com/document/javascript-html-dialog-box)
+  - 疑似ダイアログのボタンデザイン(https://grow-group.jp/archives/2674/)
+  - アイコン素材(https://icooon-mono.com/)
 
 
 
 # バージョン情報
-・バージョン1.0.0
-　　2020/11/08 新規作成
+・バージョン1.0.0  
+  2020/11/08 新規作成
+
 
 
 # Lisence
