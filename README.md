@@ -1,13 +1,14 @@
 # pcportal
-You can browse the references of text documents distributed on your PC all at once.
+You can browse the references of text documents distributed on your PC all at once.  
 download (https://github.com/nnnmu24/pcportal)
 
 
 # 概要
-  - ローカルPC上の各所に分散した、仕事およびプライベートの情報の集約。
-    「この情報を見たいんだけど、どこだったかなあ・・・」の改善。
+  - ローカルPC上の各所に分散した、仕事およびプライベートの情報の集約。  
+    「この情報を見たいんだけど、どこだったかなあ・・・」の改善。  
     「この情報を見たいんだけど、エクスプローラーで見ると階層下がって、下がって、下がって・・・面倒だなあ」の改善。
   - スケジュールやTODOタスクといった、日々変わる情報の参照と編集。
+
 
 
 # 機能について
@@ -47,19 +48,17 @@ download (https://github.com/nnnmu24/pcportal)
   - Cookieに記憶したタスクのチェック情報を削除。
 
 
+
 # ガイドライン
 
 ## データの作成
 以下のファイルを定義する。
-  - データテキストファイル
-    - 常用情報の「通知」に表示するファイル
-      - data/app/data/notice.txt
-    - 常用情報の「スケジュール」に表示するファイル
-      - data/app/data/schedule.txt
-    - 常用情報の「タスク」に表示するファイル
-      - data/app/data/task.txt
   - コンテンツ定義JSファイル
     - data/content.js
+  - データテキストファイル
+    - data/app/data/notice.txt 常用情報の「通知」に表示するファイル
+    - data/app/data/schedule.txt 常用情報の「スケジュール」に表示するファイル
+    - data/app/data/task.txt 常用情報の「タスク」に表示するファイル
 
 ### コンテンツ定義JSファイル
 以下を定義する。
@@ -67,10 +66,11 @@ download (https://github.com/nnnmu24/pcportal)
   - コンテンツの定義
   - 編集、エクスプローラコマンド
 
+  
   - コンテンツグループの定義
-    - 以下のように、contentObjectGroupMapInitにMapオブジェクトと設定する。
-      キー：固定で、「content_group_100」から「content_group_900」まで。
-      値・label：画面に表示するグループ名
+    - 以下のように、contentObjectGroupMapInitにMapオブジェクトと設定する。  
+      キー：固定で、「content_group_100」から「content_group_900」まで。  
+      値・label：画面に表示するグループ名  
       値・element：グループ内のコンテンツのコード値。「コンテンツの定義」で定義した値であること。
 ```
         exports.contentObjectGroupMapInit = function() {
@@ -88,12 +88,12 @@ download (https://github.com/nnnmu24/pcportal)
         }
 ```
   - コンテンツの定義
-    - 以下のように、contentObjectMapInitにMapオブジェクトと設定する。
-　　　キー：任意の値。ただしcontent_001からcontent_004は予約している。
-　　　値・type：コンテンツの種類。plain、html、markdownのいずれか。
-　　　値・label：画面に表示するコンテンツ名
-　　　値・pathAbs：path定義が絶対パスの場合はtrue、falseでは「exeが存在するパス/resources/app」を起点とする。
-　　　値・path：コンテンツのファイルパス。
+    - 以下のように、contentObjectMapInitにMapオブジェクトと設定する。  
+　　　キー：任意の値。ただしcontent_001からcontent_004は予約している。  
+　　　値・type：コンテンツの種類。plain、html、markdownのいずれか。  
+　　　値・label：画面に表示するコンテンツ名  
+　　　値・pathAbs：path定義が絶対パスの場合はtrue、falseでは「exeが存在するパス/resources/app」を起点とする。  
+　　　値・path：コンテンツのファイルパス。  
 ```
         exports.contentObjectMapInit = function() {
             let cmap = new Map();
@@ -114,31 +114,33 @@ download (https://github.com/nnnmu24/pcportal)
 
   - 編集、エクスプローラコマンド定義
     - 以下のように、commandObjectにエクスプローラとテキストエディタのコマンドを定義する。
+```
         exports.commandObject = {
             explorer:"explorer",
             editor:"notepad",
         };
+```
 
 ### 常用情報の「通知」に表示するファイル
 HTML形式で任意の内容を記述する。
 
 ### 常用情報の「スケジュール」に表示するファイル
-以下のように年月日時分秒=スケジュール内容 という書式で定義する。
-     20190301000000=スポーツクラブへ入会手続き
-     20191218191500=自社の忘年会
-     20200520183000=〇〇さんとイタリアン☆☆で夕食
-     20200917070000=自社の健康診断
-     20201028210000=夜間作業
-     20210101083000=△△さんと初詣
-     20220429000000=帰省
+以下のように年月日時分秒=スケジュール内容 という書式で定義する。  
+     20190301000000=スポーツクラブへ入会手続き  
+     20191218191500=自社の忘年会  
+     20200520183000=〇〇さんとイタリアン☆☆で夕食  
+     20200917070000=自社の健康診断  
+     20201028210000=夜間作業  
+     20210101083000=△△さんと初詣  
+     20220429000000=帰省  
 
 ### 常用情報の「タスク」に表示するファイル
-以下のように5桁の連番=タスク内容 という書式で定義する。
-    0001=薬局へ行く
-    0002=〇〇さんへお礼のメールする
-    0003=コンビニで公共料金の支払い
-    0004=△△サイトのブログチェック
-    0005=イタリアン☆☆を予約
+以下のように5桁の連番=タスク内容 という書式で定義する。  
+    0001=薬局へ行く  
+    0002=〇〇さんへお礼のメールする  
+    0003=コンビニで公共料金の支払い  
+    0004=△△サイトのブログチェック  
+    0005=イタリアン☆☆を予約  
 
 
 
